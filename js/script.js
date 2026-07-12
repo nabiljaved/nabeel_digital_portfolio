@@ -41,6 +41,110 @@ const observer = new IntersectionObserver(entries => {
   });
 }, { threshold: 0.15 });
 
+const featuredProjects = [
+  {
+    badge: 'Flagship • Personal Project',
+    title: 'PropVera &mdash; Property Management System',
+    tech: 'Laravel • MySQL • Bootstrap',
+    description: 'Full-scale property management platform for UAE real estate businesses with multi-building access control, automated cheque workflows, tenant document tracking, and financial reporting.',
+    features: [
+      'Property & Unit Management',
+      'Tenant & Document Management',
+      'Lease Lifecycle & Renewals',
+      'Rent Calendar & Installments',
+      'Post-Dated Cheque Tracking',
+      'Building Expenses & VAT',
+      'Utility Billing & Split',
+      'Deposit Settlement',
+      'Maintenance & Inspections',
+      'Lease Exit Management',
+      'Role-Based Access Control',
+      'Property & Owner Reports'
+    ],
+    buttons: ['Live Product', 'Product Page']
+  },
+  {
+    badge: 'Enterprise • Finance System',
+    title: 'Budget & Fund Management System',
+    tech: 'Laravel • MySQL • Bootstrap • Accounting Logic',
+    description: 'Enterprise-level budgeting and fund allocation system designed for project-based companies to manage budgets, payment orders, reserved funds, project ledgers, cash flow, bank balances, and financial approvals with clear operational visibility.',
+    features: [
+      'Project Budget Management',
+      'Payment Orders Workflow',
+      'Cash Flow Monitoring',
+      'Bank Balance Tracking',
+      'Project Ledger Summary',
+      'Reserved Fund Allocation',
+      'Central Reserved Funds',
+      '30% Reserve / 70% Operations Split',
+      'VAT, Leave & Gratuity Reserves',
+      'Salary, Visa & Fuel Operations',
+      'Remittance Transfer',
+      'Management Approval Flow'
+    ],
+    buttons: ['View Details', 'Case Study']
+  },
+  {
+    badge: 'Retail • POS System',
+    title: 'RES POS &mdash; Restaurant & Retail POS System',
+    tech: 'React • Node.js • MySQL • Express',
+    description: 'Fast POS and retail operations platform for restaurants, shops and service counters with billing, inventory, receipts, customer handling, daily sales reporting and role-based cashier workflows.',
+    features: [
+      'Point of Sale Billing',
+      'Restaurant Order Management',
+      'Product & Category Setup',
+      'Inventory Stock Control',
+      'Customer Management',
+      'Discounts & Tax Handling',
+      'Receipt Printing',
+      'Cashier Shift Control',
+      'Daily Sales Reports',
+      'Payment Method Tracking',
+      'Role-Based Access',
+      'Dashboard Analytics'
+    ],
+    buttons: ['View Details', 'POS Case Study']
+  }
+];
+
+function renderFeaturedProjects() {
+  const track = document.querySelector('#featuredProjectsTrack');
+  if (!track) return;
+
+  track.innerHTML = featuredProjects.map(project => `
+    <article class="featured-project-card reveal visible">
+      <div class="project-card-top">
+        <span class="project-badge">${project.badge}</span>
+        <span class="project-tech">${project.tech}</span>
+      </div>
+      <h3>${project.title}</h3>
+      <p>${project.description}</p>
+      <ul class="project-feature-list">
+        ${project.features.map(feature => `<li>${feature}</li>`).join('')}
+      </ul>
+      <div class="project-card-actions">
+        <a class="btn primary" href="#contact">${project.buttons[0]}</a>
+        <a class="btn ghost" href="#contact">${project.buttons[1]}</a>
+      </div>
+    </article>
+  `).join('');
+
+  track.addEventListener('wheel', event => {
+    const horizontalIntent = Math.abs(event.deltaX) > Math.abs(event.deltaY);
+    if (!horizontalIntent && !event.shiftKey) return;
+    event.preventDefault();
+    track.scrollLeft += horizontalIntent ? event.deltaX : event.deltaY;
+  }, { passive: false });
+
+  const prev = document.querySelector('.project-prev');
+  const next = document.querySelector('.project-next');
+  const scrollAmount = () => track.clientWidth;
+  prev?.addEventListener('click', () => track.scrollBy({ left: -scrollAmount(), behavior: 'smooth' }));
+  next?.addEventListener('click', () => track.scrollBy({ left: scrollAmount(), behavior: 'smooth' }));
+}
+
+renderFeaturedProjects();
+reveals = document.querySelectorAll('.reveal');
 reveals.forEach(el => observer.observe(el));
 window.addEventListener('scroll', onScroll, { passive: true });
 onScroll();
