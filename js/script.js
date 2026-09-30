@@ -45,8 +45,9 @@ const featuredProjects = [
   {
     badge: 'Flagship • Personal Project',
     title: 'PropVera &mdash; Property Management System',
+    image: 'img/project-property-management.png',
     tech: 'Laravel • MySQL • Bootstrap',
-    description: 'Full-scale property management platform for UAE real estate businesses with multi-building access control, automated cheque workflows, tenant document tracking, and financial reporting.',
+    description: 'A complete property management platform for leases, tenants, payments, maintenance, documents, buildings, units, reporting, and daily operations workflows.',
     features: [
       'Property & Unit Management',
       'Tenant & Document Management',
@@ -66,8 +67,9 @@ const featuredProjects = [
   {
     badge: 'Enterprise • Finance System',
     title: 'Budget & Fund Management System',
+    image: 'img/project-budget-management.png',
     tech: 'Laravel • MySQL • Bootstrap • Accounting Logic',
-    description: 'Enterprise-level budgeting and fund allocation system designed for project-based companies to manage budgets, payment orders, reserved funds, project ledgers, cash flow, bank balances, and financial approvals with clear operational visibility.',
+    description: 'A budgeting and fund management system for projects, approvals, salaries, facilities, payment orders, reserves, reporting, and financial control.',
     features: [
       'Project Budget Management',
       'Payment Orders Workflow',
@@ -87,8 +89,9 @@ const featuredProjects = [
   {
     badge: 'Retail • POS System',
     title: 'RES POS &mdash; Restaurant & Retail POS System',
+    image: 'img/project-pos.png',
     tech: 'React • Node.js • MySQL • Express',
-    description: 'Fast POS and retail operations platform for restaurants, shops and service counters with billing, inventory, receipts, customer handling, daily sales reporting and role-based cashier workflows.',
+    description: 'A restaurant and retail POS platform for menus, billing, inventory, orders, payments, cashier shifts, receipts, and sales reporting.',
     features: [
       'Point of Sale Billing',
       'Restaurant Order Management',
@@ -104,8 +107,145 @@ const featuredProjects = [
       'Dashboard Analytics'
     ],
     buttons: ['View Details', 'POS Case Study']
+  },
+  {
+    badge: 'Operations • Fleet System',
+    title: 'Fleet Management System',
+    image: 'img/project-fleet-management.png',
+    tech: 'Laravel • React • MySQL',
+    description: 'A centralized fleet management platform for vehicles, drivers, maintenance, fuel, inspections, assignments, expenses, tracking, and operational reporting control.',
+    features: [],
+    buttons: ['View Details', 'Case Study']
+  },
+  {
+    badge: 'Education • Learning Platform',
+    title: 'XeLearning Platform',
+    image: 'img/project-xelearning.png',
+    tech: 'Laravel • React • MySQL',
+    description: 'An interactive e-learning platform for courses, lessons, assessments, learners, instructors, progress tracking, certificates, content delivery, and performance insights.',
+    features: [],
+    buttons: ['View Details', 'Case Study']
+  },
+  {
+    badge: 'Construction • Document System',
+    title: 'CDE &mdash; Construction Engineering Document Management',
+    image: 'img/project-cde-document-management.png',
+    tech: 'Laravel • React • MySQL',
+    description: 'A construction document management platform for drawings, submittals, approvals, revisions, contracts, transmittals, collaboration, site records, and project compliance.',
+    features: [],
+    buttons: ['View Details', 'Case Study']
+  },
+  {
+    badge: 'Workflow • Approval System',
+    title: 'Document Management &amp; Approval System',
+    image: 'img/project-document-management-approval.png',
+    tech: 'Laravel • React • MySQL',
+    description: 'A centralized document workflow platform for uploads, approvals, revisions, permissions, comments, notifications, audit trails, and controlled business collaboration.',
+    features: [],
+    buttons: ['View Details', 'Case Study']
+  },
+  {
+    badge: 'E-commerce • Sports Store',
+    title: 'Apollo Sports',
+    tech: 'Shopify • E-commerce • Online Store',
+    description: 'A Shopify sports store for products, collections, customer shopping, secure checkout, promotions, orders, inventory, and streamlined online retail operations.',
+    features: [],
+    buttons: ['Visit Website', 'View Project']
+  },
+  {
+    badge: 'E-commerce • Appliances Store',
+    title: 'Home Appliances',
+    tech: 'WordPress • WooCommerce • E-commerce',
+    description: 'A WordPress e-commerce store for home appliances, product discovery, categories, customer orders, payments, promotions, inventory, and online shopping.',
+    features: [],
+    buttons: ['Visit Website', 'View Project']
+  },
+  {
+    badge: 'E-commerce • Gift Store',
+    title: 'PK Gift Shop',
+    tech: 'React • E-commerce • Online Store',
+    description: 'A modern gift shopping platform for product browsing, categories, customer orders, secure checkout, promotions, inventory, and convenient online purchasing.',
+    features: [],
+    buttons: ['Visit Website', 'View Project']
   }
 ];
+
+const defaultProjectImage = 'img/ai-application.png';
+const websitePreviewImages = {
+  'Apollo Sports': 'https://s.wordpress.com/mshots/v1/https%3A%2F%2Fapollosports.pk%2F?w=1200&h=700',
+  'Home Appliances': 'https://s.wordpress.com/mshots/v1/https%3A%2F%2Fchoiceappliances.pk%2F?w=1200&h=700',
+  'PK Gift Shop': 'https://s.wordpress.com/mshots/v1/https%3A%2F%2Fpkgiftshop.com%2F?w=1200&h=700',
+  'AI-Fatah': 'https://s.wordpress.com/mshots/v1/https%3A%2F%2Falfatah.pk%2F?w=1200&h=700',
+  'Sindh Crafts': 'https://s.wordpress.com/mshots/v1/https%3A%2F%2Fsindhcrafts.com%2F?w=1200&h=700',
+  'Trims': 'https://s.wordpress.com/mshots/v1/https%3A%2F%2Ftrims.pk%2F?w=1200&h=700',
+  'Liberty Books': 'https://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.libertybooks.com%2F?w=1200&h=700',
+  'My Vitamin Store': 'https://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.myvitaminstore.pk%2F?w=1200&h=700',
+  'Cart PK': 'https://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.cartpk.com%2F?w=1200&h=700',
+  'Raaz Life': 'https://s.wordpress.com/mshots/v1/https%3A%2F%2Fraazlife.com%2F?w=1200&h=700',
+  'XAD Technologies': 'https://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.xadtechnologies.com%2F?w=1200&h=700',
+  'XAD Contracting': 'https://xadcontracting.com/assets/logo/XGC.png',
+  'Mobile Payment App': 'https://play-lh.googleusercontent.com/LSLyty4ZnmPDqYTb12h-cxZdSICHPPkorrlyqdaa7xFvmzUm-KwDdohkOxMeb7tdZVU=w526-h296',
+  'Studently Mobile Application': 'https://img.youtube.com/vi/ApIrGMwoJ2Y/hqdefault.jpg',
+  'German-Based Courier Finder App': 'https://img.youtube.com/vi/nei0rnpbjg4/hqdefault.jpg',
+  'Bilkul Fresh Grocery App': 'https://img.youtube.com/vi/DaON2ALg42o/hqdefault.jpg',
+  'IELTS Desktop App': 'https://img.youtube.com/vi/1srQ99B2FIw/maxresdefault.jpg'
+};
+const projectLinks = {
+  'Apollo Sports': 'https://apollosports.pk/',
+  'Home Appliances': 'https://choiceappliances.pk/',
+  'PK Gift Shop': 'https://pkgiftshop.com/',
+  'AI-Fatah': 'https://alfatah.pk/',
+  'Sindh Crafts': 'https://sindhcrafts.com/',
+  'Trims': 'https://trims.pk/',
+  'Liberty Books': 'https://www.libertybooks.com/',
+  'My Vitamin Store': 'https://www.myvitaminstore.pk/',
+  'Cart PK': 'https://www.cartpk.com/',
+  'Raaz Life': 'https://raazlife.com/',
+  'XAD Technologies': 'https://www.xadtechnologies.com/',
+  'XAD Contracting': 'https://xadcontracting.com/',
+  'Mobile Payment App': 'https://play.google.com/store/apps/details?id=com.mightywarners.mpay&hl=en',
+  'Studently Mobile Application': 'https://youtu.be/ApIrGMwoJ2Y',
+  'German-Based Courier Finder App': 'https://www.youtube.com/shorts/nei0rnpbjg4',
+  'Bilkul Fresh Grocery App': 'https://youtube.com/shorts/DaON2ALg42o',
+  'IELTS Desktop App': 'https://youtu.be/1srQ99B2FIw'
+};
+
+featuredProjects.push(
+  ...[
+    ['AI-Fatah', 'WordPress • E-commerce', 'A WordPress e-commerce platform for product browsing, online orders, customer shopping, promotions, inventory, and reliable retail operations.'],
+    ['Sindh Crafts', 'WordPress • E-commerce', 'A cultural e-commerce store for handcrafted products, collections, customer orders, secure checkout, promotions, and online shopping experiences.'],
+    ['Trims', 'WordPress • E-commerce', 'A WordPress retail platform for product discovery, categories, customer shopping, orders, promotions, inventory, and streamlined online sales.'],
+    ['Liberty Books', 'Node.js • E-commerce', 'An online bookstore platform for book discovery, categories, customer orders, secure checkout, inventory, promotions, and convenient digital shopping.'],
+    ['My Vitamin Store', 'Angular • E-commerce', 'An Angular health and wellness store for product browsing, categories, customer orders, secure checkout, promotions, inventory, and online purchasing.'],
+    ['Cart PK', 'Magento • E-commerce', 'A Magento e-commerce platform for product catalogs, customer shopping, orders, payments, promotions, inventory, and scalable online retail operations.'],
+    ['Raaz Life', 'WordPress • E-commerce', 'A WordPress lifestyle store for product discovery, categories, customer orders, secure checkout, promotions, inventory, and convenient online shopping.'],
+    ['XAD Technologies', 'Laravel • Business Platform', 'A Laravel business platform supporting service operations, project workflows, customer management, reporting, approvals, and organized company administration.'],
+    ['XAD Contracting', 'Laravel • Business Platform', 'A Laravel contracting platform for project coordination, service workflows, documentation, reporting, approvals, and structured business operations management.'],
+    ['Mobile Payment App', 'Google Play • Mobile App', 'A mobile payment application for digital transactions, account access, payment tracking, secure transfers, notifications, and convenient everyday financial management.'],
+    ['Studently Mobile Application', 'YouTube • Mobile App', 'A student-focused mobile application supporting learning access, user engagement, educational content, progress tracking, and convenient digital experiences.'],
+    ['German-Based Courier Finder App', 'Flutter • Google Maps • Mobile App', 'A German-based courier finder app allowing users to choose pickup and delivery locations on Google Maps and manage courier requests.'],
+    ['Bilkul Fresh Grocery App', 'Flutter • E-commerce • Mobile App', 'A Flutter grocery shopping app for fresh products, categories, cart management, online orders, customer checkout, delivery details, and convenient mobile shopping.'],
+    ['IELTS Desktop App', 'Electron JS • Desktop App', 'An Electron desktop application for IELTS preparation, learning content, practice activities, progress tracking, assessments, and focused student productivity.'],
+  ].map(([title, tech, description]) => ({
+    badge: 'Portfolio • Selected Project',
+    title,
+    image: websitePreviewImages[title],
+    url: projectLinks[title],
+    tech,
+    description,
+    features: [],
+    buttons: ['View Details', 'Case Study']
+  }))
+);
+
+featuredProjects.forEach(project => {
+  if (!project.image && websitePreviewImages[project.title]) {
+    project.image = websitePreviewImages[project.title];
+  }
+  if (!project.url && projectLinks[project.title]) {
+    project.url = projectLinks[project.title];
+  }
+});
 
 function renderFeaturedProjects() {
   const track = document.querySelector('#featuredProjectsTrack');
@@ -113,34 +253,18 @@ function renderFeaturedProjects() {
 
   track.innerHTML = featuredProjects.map(project => `
     <article class="featured-project-card reveal visible">
-      <div class="project-card-top">
-        <span class="project-badge">${project.badge}</span>
-        <span class="project-tech">${project.tech}</span>
-      </div>
+      <div class="project-visual"><img src="${project.image || defaultProjectImage}" alt="${project.title} screenshot" loading="lazy" onerror="this.onerror=null;this.src='${defaultProjectImage}'"><span class="project-preview-fallback"><i data-lucide="layout-dashboard"></i>Project preview</span></div>
       <h3>${project.title}</h3>
       <p>${project.description}</p>
-      <ul class="project-feature-list">
-        ${project.features.map(feature => `<li>${feature}</li>`).join('')}
-      </ul>
+      <div class="project-tags">${project.tech.split(' • ').slice(0, 3).map(tech => `<span>${tech}</span>`).join('')}</div>
+      ${project.url && /youtube\.com|youtu\.be/.test(project.url) ? `<code class="project-url" title="Copy this URL">${project.url}</code>` : ''}
       <div class="project-card-actions">
-        <a class="btn primary" href="#contact">${project.buttons[0]}</a>
-        <a class="btn ghost" href="#contact">${project.buttons[1]}</a>
+        <a class="project-link-button" href="${project.url || '#contact'}" ${project.url ? 'target="_blank" rel="noopener"' : ''} aria-label="Open ${project.title}"><span aria-hidden="true">↗</span></a>
       </div>
     </article>
   `).join('');
 
-  track.addEventListener('wheel', event => {
-    const horizontalIntent = Math.abs(event.deltaX) > Math.abs(event.deltaY);
-    if (!horizontalIntent && !event.shiftKey) return;
-    event.preventDefault();
-    track.scrollLeft += horizontalIntent ? event.deltaX : event.deltaY;
-  }, { passive: false });
-
-  const prev = document.querySelector('.project-prev');
-  const next = document.querySelector('.project-next');
-  const scrollAmount = () => track.clientWidth;
-  prev?.addEventListener('click', () => track.scrollBy({ left: -scrollAmount(), behavior: 'smooth' }));
-  next?.addEventListener('click', () => track.scrollBy({ left: scrollAmount(), behavior: 'smooth' }));
+  if (window.lucide) lucide.createIcons();
 }
 
 renderFeaturedProjects();
