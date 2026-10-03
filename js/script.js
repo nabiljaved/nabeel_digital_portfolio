@@ -253,7 +253,7 @@ function renderFeaturedProjects() {
 
   track.innerHTML = featuredProjects.map(project => `
     <article class="featured-project-card reveal visible">
-      <div class="project-visual"><img src="${project.image || defaultProjectImage}" alt="${project.title} screenshot" loading="lazy" onerror="this.onerror=null;this.src='${defaultProjectImage}'"><span class="project-preview-fallback"><i data-lucide="layout-dashboard"></i>Project preview</span></div>
+      <div class="project-visual"><img src="${project.image || defaultProjectImage}" alt="${project.title} screenshot" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='${defaultProjectImage}'"><span class="project-preview-fallback"><i data-lucide="layout-dashboard"></i>Project preview</span></div>
       <h3>${project.title}</h3>
       <p>${project.description}</p>
       <div class="project-tags">${project.tech.split(' • ').slice(0, 3).map(tech => `<span>${tech}</span>`).join('')}</div>
